@@ -86,3 +86,13 @@ export const formConfig = {
   errorClass: "popup__error",
   errorClassVisible: "popup__error_visible",
 };
+
+export const formConfigAuth = {
+  formSelector: ".auth__form",
+  inputSelector: ".auth__input",
+  submitButtonSelector: ".auth__button",
+  inactiveButtonClass: "auth__button-disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error",
+  errorClassVisible: "popup__error_visible",
+};

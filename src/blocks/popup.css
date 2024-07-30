@@ -139,4 +139,9 @@
     margin-bottom: 22px;
     padding: 0 0 9px 0;
   }
+
+  .popup__error {
+    margin: 0 30px;
+    font-size: 10px;
+  }
 }
