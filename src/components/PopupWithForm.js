@@ -12,13 +12,13 @@ function PopupWithForm({
   button,
 }) {
   const [open, setOpen] = useState(isOpen);
-  const form = useRef();
-  const overlay = useRef();
+  const formRef = useRef();
+  const overlayRef = useRef();
 
   function close() {
     setOpen(false);
     onClose();
-    form.current.reset();
+    formRef.current.reset();
     resetValidation();
   }
 
@@ -27,21 +27,21 @@ function PopupWithForm({
   }
 
   function handleCloseClickOverlay(e) {
-    if (e.target === overlay.current) {
+    if (e.target === overlayRef.current) {
       close();
     }
   }
 
   function enableValidation() {
     new FormValidator({
-      formElement: form.current,
+      formElement: formRef.current,
       config: formConfig,
     }).enableValidation();
   }
 
   function resetValidation() {
     new FormValidator({
-      formElement: form.current,
+      formElement: formRef.current,
       config: formConfig,
     }).resetValidation();
   }
@@ -59,7 +59,7 @@ function PopupWithForm({
       className={`popup ${
         open ? "popup_opened" : "popup_closed"
       }  popup_${name}`}
-      ref={overlay}
+      ref={overlayRef}
       onClick={handleCloseClickOverlay}
     >
       <div className="popup__container" id="cards-form">
@@ -78,7 +78,7 @@ function PopupWithForm({
         <form
           name={name}
           className={`popup__form popup__form_${name}`}
-          ref={form}
+          ref={formRef}
           noValidate=""
           onSubmit={onSubmit}
         >

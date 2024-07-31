@@ -2,10 +2,10 @@ import { useRef } from "react";
 import closeIconS from "../images/close-icon-s.png";
 
 function ImagePopup({ card, onClose }) {
-  const overlay = useRef();
+  const overlayRef = useRef();
 
   function handleCloseClickOverlay(e) {
-    if (e.target === overlay.current) {
+    if (e.target === overlayRef.current) {
       onClose();
     }
   }
@@ -14,7 +14,7 @@ function ImagePopup({ card, onClose }) {
     <>
       <section
         className={`popup popup-zoom-image ${card ? "popup_opened" : ""}`}
-        ref={overlay}
+        ref={overlayRef}
         onClick={handleCloseClickOverlay}
       >
         <div className="popup-zoom-image__container">

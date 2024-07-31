@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import InfoTooltip from "./InfoTooltip";
 import * as auth from "../utils/auth";

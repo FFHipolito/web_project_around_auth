@@ -3,10 +3,10 @@ import { useRef } from "react";
 import closeIcon from "../images/close-icon.png";
 
 const InfoTooltip = ({ isOpen, onClose, isSuccess, message }) => {
-  const overlay = useRef();
+  const overlayRef = useRef();
 
   function handleCloseClickOverlay(e) {
-    if (e.target === overlay.current) {
+    if (e.target === overlayRef.current) {
       onClose();
     }
   }
@@ -14,7 +14,7 @@ const InfoTooltip = ({ isOpen, onClose, isSuccess, message }) => {
   return (
     <div
       className={`modal ${isOpen ? "modal_open" : ""}`}
-      ref={overlay}
+      ref={overlayRef}
       onClick={handleCloseClickOverlay}
     >
       <div className="modal__content">

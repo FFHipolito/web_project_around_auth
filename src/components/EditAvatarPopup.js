@@ -2,18 +2,18 @@ import { useRef, useEffect } from "react";
 import PopupWithForm from "./PopupWithForm";
 
 function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
-  const link = useRef("");
+  const linkRef = useRef("");
 
   useEffect(() => {
     if (!isOpen) {
-      link.current.value = "";
+      linkRef.current.value = "";
     }
   }, [isOpen]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     return onUpdateAvatar({
-      avatar: link.current.value,
+      avatar: linkRef.current.value,
     });
   };
 
@@ -30,7 +30,7 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
         <input
           className="popup__input-text popup__form-input-link"
           id="avatar"
-          ref={link}
+          ref={linkRef}
           placeholder="Link da Imagem"
           type="url"
           name="image"
